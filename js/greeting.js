@@ -1,10 +1,10 @@
 const today = new Date();
 const hour = today.getHours();
 
-const gree1 = 'Guten Morgen';
-const gree2 = 'Schönen Nachmittag';
-const gree3 = 'Guten Abend';
-const gree4 = 'Geh schlafen';
+const gree1 = 'Geh Schlafen!';
+const gree2 = 'Guten Morgen';
+const gree3 = 'Schönen Nachmittag';
+const gree4 = 'Guten Abend';
 
 if (hour >= 23 || hour < 5) {
 	document.getElementById('title').innerText = gree1;
