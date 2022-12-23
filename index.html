@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+    <title>Startseite</title>
+</head>
+<body>
+    <div class="container">
+        <! -- Uhrzeit und Begrüssung -->
+        <div class="time">
+            <div class="clock">
+                <div id="hour"></div>
+                <div id="separator"></div>
+                <div id="minutes"></div>
+            </div>
+            <div id="title"></div>
+        </div>
+        
+
+        <! -- Wetter -->
+        <div class="weather">
+            <div class="weatherValue">
+                <p>- °<span class="g">c</span></p>
+            </div>
+            <div class="weatherDescription">
+                <p></p>
+            </div>
+        </div>
+
+        <! -- Verknüpfungen -->
+        <div class="shorts">
+                <button id="button_1" onclick="window.location.href='https://youtube.com';"><i class="fa-brands fa-youtube"></i></button>
+                <button id="button_2" onclick="window.location.href='https://open.spotify.com';"><i class="fa-brands fa-spotify"></i></button>
+                <button id="button_3" onclick="window.location.href='https://reddit.com';"><i class="fa-brands fa-reddit-alien"></i></button>
+                <button id="button_4" onclick="window.location.href='https://web.whatsapp.com';"><i class="fa-brands fa-whatsapp"></i></button>
+                <button id="button_5" onclick="window.location.href='https://twitch.tv';"><i class="fa-brands fa-twitch"></i></button>
+                <button id="button_6" onclick="window.location.href='https://ulricianum-aurich.de/iserv/auth/login';"><i class="fa-solid fa-envelope"></i></button>     
+        </div>
+        <div class="corona">
+            <h2>Aktuelle Coronazahlen</h2>
+        </div>
+       
+        
+    </div>
+    <script src="js/timer.js"></script>
+    <script src="js/greeting.js"></script>
+</body>
+</html>
