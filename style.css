@@ -30,6 +30,7 @@ body {
     grid-gap: 30px;
     padding: 20px;
   }
+
 .time {
     grid-row: 1 / span 2;
     grid-column: 1 / span 2;
@@ -77,15 +78,29 @@ body {
     color: #3a3a3a;
 }
 .shorts button:hover {
-    background-color: #dd403a;
     transition: 0.2s ease-in-out;
-    border-color: #dd403a;
-    
-    
 }
 .corona {
     grid-row: 3 / span 2;
     grid-column: 3 / span 2;
+}
+
+.weatherIcon img {
+  width: 70px;
+  height: 70px;
+}
+
+.weatherValue p {
+  font-size: var(--fg-secondary);
+  font-weight: bolder;
+  margin-left: 15px;
+  color: var(--fg);
+}
+
+.weatherDescription p {
+  font-size: var(--fg-secondary);
+  margin-left: 15px;
+  color: var(--fg);
 }
 
 #hour,
@@ -97,32 +112,65 @@ body {
 }
 
 #greetings {
-    font-size: 3vh;
-    color: #3a3a3a;
-  }
+  font-size: 3vh;
+  color: #3a3a3a;
+}
 
 #button_1 {
-    grid-row: 1;
-    grid-column: 1;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+#button_1:hover {
+  background-color: #ff4040;
+  border-color: #ff4040;
+}
+
+#button_2:hover {
+  background-color: #2dde6c;
+  border-color: #2dde6c;
 }
 #button_2 {
-    grid-row: 1;
-    grid-column: 2;
+  grid-row: 1;
+  grid-column: 2;
 }
 #button_3 {
-    grid-row: 2;
-    grid-column: 1;
+  grid-row: 2;
+  grid-column: 1;
 }
+
+#button_3:hover {
+  background-color: #ff7440;
+  border-color: #ff7440;
+}
+
 #button_4 {
-    grid-row: 2;
-    grid-column: 2;
-}#button_5 {
+  grid-row: 2;
+  grid-column: 2;
+}
+#button_4:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+#button_5 {
     grid-row: 1;
     grid-column: 3;
-}#button_6   {
+}
+
+#button_5:hover {
+  background-color: #aa92d4;
+  border-color: #aa92d4;
+}
+#button_6   {
     grid-row: 2;
     grid-column: 3;
 }
+
+#button_6:hover {
+  background-color: #0e94ff;
+  border-color: #0e94ff;
+}
+
 @media only screen and (max-width: 68.75em) {
     .container {
       grid-gap: 20px;

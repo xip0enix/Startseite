@@ -1,3 +1,8 @@
+/*    _____ _                      
+//   |_   _(_)_ __  ___ _ _ 
+//     | | | | '  \/ -_) '_|
+//     |_| |_|_|_|_\___|_|  
+*/ 
 window.onload = displayClock();
 function displayClock() {
 

@@ -1,3 +1,8 @@
+/*  __      __        _   _            
+//  \ \    / /__ __ _| |_| |_  ___ _ _ 
+//  \ \/\/ / -_) _` |  _| ' \/ -_) '_|
+//  \_/\_/\___\__,_|\__|_||_\___|_|  
+*/
 const iconElement = document.querySelector('.weatherIcon');
 const tempElement = document.querySelector('.weatherValue p');
 const descElement = document.querySelector('.weatherDescription p');
