@@ -46,13 +46,37 @@ body {
     justify-content: center;
   }
 
-.weather {
+.weatherblock {
   grid-column: 3 / span 2;
   grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather .weatherIcon img {
+  width: 70px;
+  height: 70px;
+}
+
+.weather .weatherValue p {
+  font-size: 3vh;
+  font-weight: bolder;
+  margin-left: 15px;
+  color: #3a3a3a;
+}
+
+.weather .weatherDescription p {
+  font-size: 3vh;
+  margin-left: 15px;
+  color: #3a3a3a;
 }
 
 .shorts {
@@ -85,24 +109,6 @@ body {
     grid-column: 3 / span 2;
 }
 
-.weatherIcon img {
-  width: 70px;
-  height: 70px;
-}
-
-.weatherValue p {
-  font-size: var(--fg-secondary);
-  font-weight: bolder;
-  margin-left: 15px;
-  color: var(--fg);
-}
-
-.weatherDescription p {
-  font-size: var(--fg-secondary);
-  margin-left: 15px;
-  color: var(--fg);
-}
-
 #hour,
 #separator,
 #minutes {
@@ -111,11 +117,16 @@ body {
   color: #3a3a3a;
 }
 
-#greetings {
+#title {
   font-size: 3vh;
   color: #3a3a3a;
 }
 
+#wetter {
+  font-size: 5vh;
+  font-weight: bold;
+  color: #3a3a3a;
+}
 #button_1 {
   grid-row: 1;
   grid-column: 1;
@@ -167,8 +178,8 @@ body {
 }
 
 #button_6:hover {
-  background-color: #0e94ff;
-  border-color: #0e94ff;
+  background-color: #51b2ff;
+  border-color: #51b2ff;
 }
 
 @media only screen and (max-width: 68.75em) {
@@ -182,7 +193,7 @@ body {
       grid-column: 1 / span 4;
     }
   
-    .weather {
+    .weatherblock {
       display: none;
     }
   
