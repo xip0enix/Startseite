@@ -15,6 +15,7 @@ const gree2 = 'Guten Morgen! ';
 const gree3 = 'Schönen Nachmittag! ';
 const gree4 = 'Guten Abend! ';
 
+
 const valentine = '❤️'
 const helloween = '🎃';
 const weihnachten = '🌲🎁';
@@ -32,10 +33,6 @@ if (month == 9 && day == 31)
 
 if (month == 11 && day >= 24 && day < 27) {
 	special = weihnachten;
-}
-
-if (month == 0 && day < 10) {
-	special = year + neuJahr;
 }
 
 if (hour >= 23 || hour < 5) {
