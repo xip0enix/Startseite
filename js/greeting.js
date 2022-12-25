@@ -35,7 +35,7 @@ if (month == 11 && day >= 24 && day < 27) {
 	special = weihnachten;
 }
 
-if (month == 1 && day < 10)
+if (month == 0 && day < 10)
 {
 	special = year + neuJahr;
 }
