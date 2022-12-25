@@ -66,6 +66,12 @@ body {
     justify-content: center;
   }
 
+#quote {
+  color: var(--fc);
+  font-style: italic;
+  font-size: larger;
+  margin-top: 30px;
+}
 .weatherblock {
   grid-column: 3 / span 2;
   grid-row: 1 / span 2;
@@ -285,7 +291,10 @@ body {
     .weatherblock {
       display: none;
     }
-  
+    
+    #quote {
+      display: none;
+    }
     #greetings {
       font-size: var(--fg-secondary);
     }

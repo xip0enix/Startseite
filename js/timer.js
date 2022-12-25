@@ -11,8 +11,6 @@ function displayClock() {
 	var hh = d.getHours();
 	var ampm = '';
 
-	
-
 	document.getElementById('hour').innerText = hh;
 	document.getElementById('separator').innerHTML = ' : ';
 	document.getElementById('minutes').innerText = min + ampm;

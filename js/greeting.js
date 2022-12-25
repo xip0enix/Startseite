@@ -24,8 +24,8 @@ const special = (month === 1 && day === 14) ? VALENTINE
   : (month === 11 && day >= 24 && day < 27) ? CHRISTMAS
   : (month === 0 && day < 10) ? year + NEW_YEAR
   : '';
-
 document.getElementById('head').textContent = special;
+
 const greeting =
   hour >= 23 || hour < 5
     ? gree1 + special

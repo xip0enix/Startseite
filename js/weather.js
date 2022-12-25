@@ -18,15 +18,17 @@ const KELVIN = 273.15;
 const key = 'f34e3cd90afed5b64970ad40c0291583';
 setPosition();
 
-async function setPosition(position) {
-	try {
-	  const pos = await navigator.geolocation.getCurrentPosition();
-	  getWeather(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3));
-	} catch (err) {
-	  console.error(err);
-	  getWeather(49, 11.5);
-	}
-  }
+function setPosition(position) {
+	navigator.geolocation.getCurrentPosition(
+		pos => {
+			getWeather(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3));
+		},
+		err => {
+			console.error(err);
+			getWeather(49, 11.5);
+		}
+	);
+}
 
 function convertTemperature(value, fromUnit, toUnit) {
 	if (fromUnit === toUnit) {
