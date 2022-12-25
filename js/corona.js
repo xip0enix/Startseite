@@ -5,18 +5,29 @@
 //    \___\___/_| \___/_||_\__,_|
 */
 const api_url = 'https://api.corona-zahlen.org/germany';
-async function getCorona(){
-    const response = await fetch (api_url);
-    const data = await response.json();
-    console.log(data);
 
-    const neuInfektionen = data.delta.cases;
-    const inzidenz = Math.ceil(data.weekIncidence);
-    const tode = data.delta.deaths; 
-    console.log('Daten wurden geladen');
-
-    document.getElementById("neuInfektionen").innerHTML ='Neuinfektionen: +' + neuInfektionen;
-    document.getElementById("7tage").innerHTML = '7-Tage-Inzidenz: ' + inzidenz;
-    document.getElementById("neuTode").innerHTML = 'Todesfälle: +' + tode;
+async function getCoronaData() {
+  const { delta, weekIncidence } = await (await fetch(api_url)).json();
+  return { delta, weekIncidence };
 }
+
+async function getCorona() {
+  const { delta, weekIncidence } = await getCoronaData();
+  const neuInfektionen = delta.cases;
+  const inzidenz = Math.ceil(weekIncidence);
+  const tode = delta.deaths;
+  console.log('Data loaded');
+
+  const neuInfektionenElement = document.getElementById("neuInfektionen");
+  const inzidenzElement = document.getElementById("7tage");
+  const todeElement = document.getElementById("neuTode");
+
+  neuInfektionenElement.innerHTML ='Neuinfektionen: +' + neuInfektionen;
+  inzidenzElement.innerHTML = '7-Tage-Inzidenz: ' + inzidenz;
+  todeElement.innerHTML = 'Todesfälle: +' + tode;
+}
+
 getCorona();
+
+// Fetch data again after a certain time interval
+setInterval(getCorona, 60000); // fetch data every 60 seconds

@@ -15,37 +15,23 @@ const gree2 = 'Guten Morgen! ';
 const gree3 = 'Schönen Nachmittag! ';
 const gree4 = 'Guten Abend! ';
 
-const valentine = '❤️'
-const helloween = '🎃';
-const weihnachten = '🌲🎁';
-const neuJahr = ' 🎉';
-var special = '';
+const VALENTINE = '❤️';
+const HALLOWEEN = '🎃';
+const CHRISTMAS = '🌲🎁';
+const NEW_YEAR = ' 🎉';
+const special = (month === 1 && day === 14) ? VALENTINE
+  : (month === 9 && day === 31) ? HALLOWEEN
+  : (month === 11 && day >= 24 && day < 27) ? CHRISTMAS
+  : (month === 0 && day < 10) ? year + NEW_YEAR
+  : '';
 
-/*Events*/
-if(month == 1 && day == 14)
-{
-	special = valentine;
-}
-if (month == 9 && day == 31)
-{
-	special = helloween;
-}
-
-if (month == 11 && day >= 24 && day < 27) {
-	special = weihnachten;
-}
-
-if (month == 0 && day < 10)
-{
-	special = year + neuJahr;
-}
-document.getElementById('head').innerText = special;
-if (hour >= 23 || hour < 5) {
-		document.getElementById('title').innerText = gree1 + special;
-	} else if (hour >= 6 && hour < 12) {
-		document.getElementById('title').innerText = gree2 + special; 
-	} else if (hour >= 12 && hour < 17) {
-		document.getElementById('title').innerText = gree3 + special;
-	} else {
-		document.getElementById('title').innerText = gree4 + special;
-}
+document.getElementById('head').textContent = special;
+const greeting =
+  hour >= 23 || hour < 5
+    ? gree1 + special
+    : hour >= 6 && hour < 12
+    ? gree2 + special
+    : hour >= 12 && hour < 17
+    ? gree3 + special
+    : gree4 + special;
+document.getElementById('title').innerText = greeting;

@@ -12,24 +12,35 @@ weather.temperature = {
 	unit: 'celsius',
 };
 
-var tempUnit = 'C';
+let tempUnit = 'C';
 
 const KELVIN = 273.15;
 const key = 'f34e3cd90afed5b64970ad40c0291583';
 setPosition();
 
-function setPosition(position) {
-	
-	navigator.geolocation.getCurrentPosition(
-		pos => {
-			getWeather(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3));
-		},
-		err => {
-			console.error(err);
-			getWeather(49, 11.5);
-		}
-	);
-}
+async function setPosition(position) {
+	try {
+	  const pos = await navigator.geolocation.getCurrentPosition();
+	  getWeather(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3));
+	} catch (err) {
+	  console.error(err);
+	  getWeather(49, 11.5);
+	}
+  }
+
+function convertTemperature(value, fromUnit, toUnit) {
+	if (fromUnit === toUnit) {
+	  return value;
+	}
+	if (fromUnit === 'C' && toUnit === 'F') {
+	  return (value * 9) / 5 + 32;
+	}
+	if (fromUnit === 'F' && toUnit === 'C') {
+	  return (value - 32) * 5 / 9;
+	}
+	// Add additional cases for other units as needed
+	return value;
+  }
 
 function getWeather(latitude, longitude) {
 	let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=de&appid=${key}`;
@@ -39,8 +50,7 @@ function getWeather(latitude, longitude) {
 			return data;
 		})
 		.then(function(data) {
-			let celsius = Math.floor(data.main.temp - KELVIN);
-			weather.temperature.value = tempUnit == 'C' ? celsius : (celsius * 9) / 5 + 32;
+			weather.temperature.value = convertTemperature(data.main.temp - KELVIN, 'C', tempUnit);
 			weather.description = data.weather[0].description;
 			weather.iconId = data.weather[0].icon;
 		})
@@ -49,10 +59,8 @@ function getWeather(latitude, longitude) {
 		});
 }
 
-
-
 function displayWeather() {
 	iconElement.innerHTML = `<img src="assets/icons/Nord/${weather.iconId}.png"/>`;
-	tempElement.innerHTML = `${weather.temperature.value.toFixed(0)}°<span class="darkfg">${tempUnit}</span>`;
-	descElement.innerHTML = weather.description;
+	tempElement.innerHTML = `${convertTemperature(weather.temperature.value, 'C', tempUnit).toFixed(0)}°<span class="darkfg">${tempUnit}</span>`;
+	descElement.textContent = weather.description;
 }
