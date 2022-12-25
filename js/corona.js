@@ -13,7 +13,7 @@ async function getCorona(){
     const neuInfektionen = data.delta.cases;
     const inzidenz = Math.ceil(data.weekIncidence);
     const tode = data.delta.deaths; 
-    console.log(neuInfektionen, inzidenz, tode);
+    console.log('Daten wurden geladen');
 
     document.getElementById("neuInfektionen").innerHTML ='Neuinfektionen: +' + neuInfektionen;
     document.getElementById("7tage").innerHTML = '7-Tage-Inzidenz: ' + inzidenz;

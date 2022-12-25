@@ -19,7 +19,7 @@ const gree4 = 'Guten Abend! ';
 const valentine = '❤️'
 const helloween = '🎃';
 const weihnachten = '🌲🎁';
-const neuJahr = '🎉';
+const neuJahr = ' 🎉';
 var special = '';
 
 if(month == 1 && day == 14)
@@ -35,6 +35,10 @@ if (month == 11 && day >= 24 && day < 27) {
 	special = weihnachten;
 }
 
+if (month == 1 && day < 10)
+{
+	special = year + neuJahr;
+}
 if (hour >= 23 || hour < 5) {
 		document.getElementById('title').innerText = gree1 + special;
 	} else if (hour >= 6 && hour < 12) {
