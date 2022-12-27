@@ -293,7 +293,9 @@ body {
     }
     
     #quote {
-      display: none;
+      font-size: 15px;
+      margin-left: 10%;
+      margin-right: 10%;
     }
     #greetings {
       font-size: var(--fg-secondary);
