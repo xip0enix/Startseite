@@ -4,7 +4,6 @@
 //   | (__/ _ \ '_/ _ \ ' \/ _` |
 //    \___\___/_| \___/_||_\__,_|
 */
-let width = screen.width;
 const api_url = 'https://api.corona-zahlen.org/germany';
 
 if (width > 1101)
