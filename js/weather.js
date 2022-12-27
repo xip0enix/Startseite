@@ -40,7 +40,6 @@ function convertTemperature(value, fromUnit, toUnit) {
 	if (fromUnit === 'F' && toUnit === 'C') {
 	  return (value - 32) * 5 / 9;
 	}
-	// Add additional cases for other units as needed
 	return value;
   }
 
@@ -62,7 +61,7 @@ function getWeather(latitude, longitude) {
 }
 
 function displayWeather() {
-	iconElement.innerHTML = `<img src="assets/icons/Nord/${weather.iconId}.png"/>`;
+	iconElement.innerHTML = `<img src="/assets/icons/Nord/${weather.iconId}.png"/>`;
 	tempElement.innerHTML = `${convertTemperature(weather.temperature.value, 'C', tempUnit).toFixed(0)}°<span class="darkfg">${tempUnit}</span>`;
 	descElement.textContent = weather.description;
 }
