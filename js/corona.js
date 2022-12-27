@@ -4,9 +4,12 @@
 //   | (__/ _ \ '_/ _ \ ' \/ _` |
 //    \___\___/_| \___/_||_\__,_|
 */
+let width = screen.width;
 const api_url = 'https://api.corona-zahlen.org/germany';
 
-async function getCoronaData() {
+if (width > 1101)
+{
+  async function getCoronaData() {
   const { delta, weekIncidence } = await (await fetch(api_url)).json();
   return { delta, weekIncidence };
 }
@@ -31,3 +34,4 @@ getCorona();
 
 // Fetch data again after a certain time interval
 setInterval(getCorona, 60000); // fetch data every 60 seconds
+}
