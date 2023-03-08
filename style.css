@@ -300,7 +300,7 @@ body {
     #greetings {
       font-size: var(--fg-secondary);
     }
-  
+
     .coronablock {
       display: none;
     }
